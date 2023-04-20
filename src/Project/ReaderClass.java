@@ -4,14 +4,19 @@ import java.io.BufferedReader;
 import java.io.IOException;
 
 public class ReaderClass {
-	public static final int columns = 3; 
+	public static final int columns = 38; 
+	private String route;
 	
-	public static String ReadArchive(String route) {
+	public ReaderClass(String route) {
+		this.route = route;
+	}
+	
+	public String ReadArchive() {
 		File file = new File(route);
 		String result = ""; 
 		int counter = 0;
 		String[] temporal;
-		String[][] user;
+		String[][] text;
 		
 		
 
@@ -22,13 +27,13 @@ public class ReaderClass {
 				counter ++;
 			}
 			
-			user = new String[3][counter];
+			text = new String[counter][9];
 			
 			for(int i = 0; i<counter; i++) {
 				line = buffered.readLine();
-				 temporal = line.split(" ");
+				 temporal = line.split(",");
 				for(int j = 0; j< temporal.length; j++) {
-					 user[j][i] = temporal[j];
+					 text[j][i] = temporal[j];
 					
 				}
 			}

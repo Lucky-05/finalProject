@@ -16,6 +16,7 @@ public class ProjectFrame extends JFrame {
 	private JTextField selectButton;
 	private JTextField responseField;
 	private String route; 
+	private ReaderClass object = new ReaderClass(route);
 
 	/**
 	 * Launch the application.
@@ -69,7 +70,7 @@ public class ProjectFrame extends JFrame {
 		readButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-			responseField.setText(ReaderClass.ReadArchive(route));
+			responseField.setText(object.ReadArchive());
 			}
 		});
 		readButton.setBounds(145, 76, 136, 23);
