@@ -120,6 +120,7 @@ public class ActiveClass {
 		
 	    for (int i = 0; i < matrix.length; i++) {
 	    	String temporal[] = matrix[i][7].split(" ");
+	    	
 	    	for(int j = 0; j< temporal.length; j++) {
 	    		if(temporal[j].equalsIgnoreCase(key)){
 	    	        counter++;
@@ -133,11 +134,18 @@ public class ActiveClass {
 
 	    for (int i = 0; i < result.length; i++) {
 	       
-	        if(matrix[i][7].equalsIgnoreCase(key)){
-	            for (int j = 0; j < result[i].length; j++) {
-	              result[i][j] = matrix[i][j]; 
-	            }
-	            }
+	    	
+ 	String temporal[] = matrix[i][7].split(" ");
+	    	
+	    	for(int j = 0; j< temporal.length; j++) {
+	    		if(temporal[j].equalsIgnoreCase(key)){
+	    			for (int k = 0; k < result[i].length; k++) {
+	  	              result[i][k] = matrix[i][k]; 
+	  	            }
+	    	        }
+	    	}
+	    	
+	    	
 	    }
 
 	    UtilityClass utility = new UtilityClass(result, counter);

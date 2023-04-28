@@ -4,6 +4,9 @@ public class UtilityClass {
 	private int value;
 	private String[][] matrix;
 	
+	public UtilityClass() {
+		
+	}
 	public UtilityClass(String[][] matrix, int value) {
 		this.matrix= matrix;
 		this.value= value; 
