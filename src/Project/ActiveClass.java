@@ -11,10 +11,9 @@ public class ActiveClass {
 	
 	
 
-	public String[][] searchClass(String key, String[][] matrix){
+	public UtilityClass searchClass(String key, String[][] matrix){
         int counter = 0;
     
-
     for (int i = 0; i < matrix.length; i++) {
         if(matrix[i][6].equalsIgnoreCase(key)){
         counter++;
@@ -22,7 +21,8 @@ public class ActiveClass {
     }
 
     String[][] result = new String[counter][matrix[0].length];
-    result = new String[counter+1][0];
+
+    
 
     for (int i = 0; i < result.length; i++) {
        
@@ -33,15 +33,15 @@ public class ActiveClass {
             }
     }
 
+    UtilityClass utility = new UtilityClass(result, counter);
 
-    result[result.length-1][0] = Integer.toString(counter);
     
-    return result;
+    return utility;
     }
 	
 	
 	
-	public String[][] searchEdad(int key0, String[][] matrix){
+	public UtilityClass searchEdad(int key0, String[][] matrix){
 		int counter = 0;
 	    String key = "";
 		if(key0<50) {
@@ -62,7 +62,7 @@ public class ActiveClass {
 	    }
 
 	    String[][] result = new String[counter][matrix[0].length];
-	    result = new String[counter+1][0];
+	 
 
 	    for (int i = 0; i < result.length; i++) {
 	       
@@ -74,45 +74,46 @@ public class ActiveClass {
 	    }
 
 
-	    result[result.length-1][0] = Integer.toString(counter);
+	    UtilityClass utility = new UtilityClass(result, counter);
+
 	    
-	    return result;
+	    return utility;
 		
 	}
 
 	
-	public String[][] searchLocation(String key, String[][] matrix){
+	public UtilityClass searchLocation(String key, String[][] matrix){
 		int counter = 0;
 	    
 		
 		
 	    for (int i = 0; i < matrix.length; i++) {
-	        if(matrix[i][20].equalsIgnoreCase(key)){
+	        if(matrix[i][4].equalsIgnoreCase(key)){
 	        counter++;
 	        }
 	    }
 
 	    String[][] result = new String[counter][matrix[0].length];
-	    result = new String[counter+1][0];
+	
 
 	    for (int i = 0; i < result.length; i++) {
 	       
-	        if(matrix[i][20].equalsIgnoreCase(key)){
+	        if(matrix[i][4].equalsIgnoreCase(key)){
 	            for (int j = 0; j < result[i].length; j++) {
 	              result[i][j] = matrix[i][j]; 
 	            }
 	            }
 	    }
 
+	    UtilityClass utility = new UtilityClass(result, counter);
 
-	    result[result.length-1][0] = Integer.toString(counter);
 	    
-	    return result;
+	    return utility;
 		
 	}
 	
 	
-	public String[][] searchDisease(String key, String[][] matrix){
+	public UtilityClass searchDisease(String key, String[][] matrix){
 		int counter = 0;
 	   
 		
@@ -128,7 +129,7 @@ public class ActiveClass {
 	    }
 
 	    String[][] result = new String[counter][matrix[0].length];
-	    result = new String[counter+1][0];
+	   
 
 	    for (int i = 0; i < result.length; i++) {
 	       
@@ -139,10 +140,10 @@ public class ActiveClass {
 	            }
 	    }
 
+	    UtilityClass utility = new UtilityClass(result, counter);
 
-	    result[result.length-1][0] = Integer.toString(counter);
 	    
-	    return result;
+	    return utility;
 		
 	}
 	
