@@ -11,12 +11,12 @@ public class ReaderClass {
 		this.route = route;
 	}
 	
-	public String ReadArchive() {
+	public String[][] ReadArchive() {
 		File file = new File(route);
 		String result = ""; 
 		int counter = 0;
 		String[] temporal;
-		String[][] text;
+		String text[][] = null;
 		
 		
 
@@ -27,13 +27,13 @@ public class ReaderClass {
 				counter ++;
 			}
 			
-			text = new String[counter][9];
+			text= new String[counter][38];
 			
 			for(int i = 0; i<counter; i++) {
 				line = buffered.readLine();
 				 temporal = line.split(",");
 				for(int j = 0; j< temporal.length; j++) {
-					 text[j][i] = temporal[j];
+					 text[i][j] = temporal[j];
 					
 				}
 			}
@@ -47,7 +47,7 @@ public class ReaderClass {
 		
 		
 		
-		return result; 
+		return text ;
 		
 	}
 }

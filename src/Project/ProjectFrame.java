@@ -70,7 +70,7 @@ public class ProjectFrame extends JFrame {
 		readButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-			responseField.setText(object.ReadArchive());
+			//responseField.setText(object.ReadArchive());
 			}
 		});
 		readButton.setBounds(145, 76, 136, 23);

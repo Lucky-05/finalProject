@@ -17,7 +17,7 @@ public class FileChooserConfig {
 		
 		String route = "";
 		JFileChooser chooser = new JFileChooser();
-		FileNameExtensionFilter filter = new FileNameExtensionFilter("Text Entry","txt");
+		FileNameExtensionFilter filter = new FileNameExtensionFilter("Comma separated","csv");
 		chooser.setFileFilter(filter);
 		
 		int response = chooser.showOpenDialog(chooser);
