@@ -16,18 +16,19 @@ public class ReaderClass {
 		String result = ""; 
 		int counter = 0;
 		String[] temporal;
-		String text[][] = null;
+		String text[][]= null;
 		
 		
 
 		try (BufferedReader buffered = new BufferedReader(new FileReader(file))){
+			
 			String line; 
 			
 			while((line = buffered.readLine()) != null) {
 				counter ++;
 			}
 			
-			text= new String[counter][38];
+			 text= new String[counter][columns];
 			
 			for(int i = 0; i<counter; i++) {
 				line = buffered.readLine();
@@ -46,6 +47,7 @@ public class ReaderClass {
 		}
 		
 		
+		UtilityClass.total = counter;
 		
 		return text ;
 		

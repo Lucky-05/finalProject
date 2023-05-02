@@ -2,11 +2,7 @@ package Project;
 
 public class ActiveClass {
 	
-	/*
-	 * Todos los arreglos/matrices son ragged 
-	 * La última fila solo tiene una columna que sirve para el counter 
-	 * Por eso es ragged y creo que es una buena solución
-	*/
+	
 	
 	
 	
@@ -31,6 +27,7 @@ public class ActiveClass {
               result[i][j] = matrix[i][j]; 
             }
             }
+        
     }
 
     UtilityClass utility = new UtilityClass(result, counter);
