@@ -104,7 +104,9 @@ public class ProjectFrame extends JFrame {
 				ActiveClass active = new ActiveClass();
 				utility= active.searchClass(filtroField.getText(),resultMatrix);
 				resultMatrix= utility.getMatrix();
+				System.out.println(resultMatrix[20][7]);
 				percentageField.setText(Double.toString(utility.getPercentage()));
+				//System.out.println(UtilityClass.traduceMatrix(utility.getMatrix()));
 				responseField.setText(UtilityClass.traduceMatrix(utility.getMatrix()));
 			}
 		});

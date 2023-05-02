@@ -35,6 +35,7 @@ public class UtilityClass {
 		String result = ""; 
 		for(int i = 0; i< mat.length; i++) {
 		for(int j = 0; j<mat[0].length; i++) {
+			
 			if(j ==1 || j== 2 || j== 4 || j==6) {
 				result += (mat[i][j]+ " ");
 			} 

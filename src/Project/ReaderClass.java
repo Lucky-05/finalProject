@@ -36,6 +36,8 @@ public class ReaderClass {
 				}
 				 
 			}
+			
+			buffered.close();
 
 			UtilityClass.total = counter;
 			
