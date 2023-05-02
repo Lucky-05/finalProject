@@ -4,29 +4,39 @@ public class ActiveClass {
 	
 	
 	
-	
+	//proteger todos los metodos de null
 	
 
 	public UtilityClass searchClass(String key, String[][] matrix){
         int counter = 0;
     
-    for (int i = 0; i < matrix.length; i++) {
-        if(matrix[i][6].equalsIgnoreCase(key)){
-        counter++;
-        }
+    for (int i = 2; i < matrix.length; i++) {
+    
+    		if(matrix[i][6] != null) {
+    			if(matrix[i][6].equalsIgnoreCase(key)){
+    		        counter++;
+    		        
+    		        }	
+    		}
+    		
+    		
+        
+       
     }
-
+    System.out.println(counter);
     String[][] result = new String[counter][matrix[0].length];
 
     
 
     for (int i = 0; i < result.length; i++) {
-       
+    	if(matrix[i][6] != null){
         if(matrix[i][6].equalsIgnoreCase(key)){
             for (int j = 0; j < result[i].length; j++) {
-              result[i][j] = matrix[i][j]; 
+              result[i][j] = matrix[i][j];
+              
             }
             }
+    }
         
     }
 
@@ -63,6 +73,7 @@ public class ActiveClass {
 
 	    for (int i = 0; i < result.length; i++) {
 	       
+	    	System.out.println(matrix[i][20]);
 	        if(matrix[i][20].equalsIgnoreCase(key)){
 	            for (int j = 0; j < result[i].length; j++) {
 	              result[i][j] = matrix[i][j]; 

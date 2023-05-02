@@ -9,13 +9,19 @@ import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import javax.swing.JComboBox;
 import java.awt.Font;
 import javax.swing.JLabel;
 import javax.swing.ImageIcon;
 
 public class ProjectFrame extends JFrame {
 
+	
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
 	private JPanel contentPane;
 	private JTextField responseField;
 	static String route; 
@@ -28,7 +34,7 @@ public class ProjectFrame extends JFrame {
 	private JTextField percentageText;
 	private JTextField percentageField;
 	private JLabel image;
-	private UtilityClass utility = new UtilityClass();
+	
 
 	/**
 	 * Launch the application.

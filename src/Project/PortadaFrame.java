@@ -1,8 +1,6 @@
 package Project;
 
 import java.awt.EventQueue;
-import java.awt.Image;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
@@ -23,9 +21,8 @@ public class PortadaFrame extends JFrame {
 	private JPanel contentPane;
 	private JTextField totalCasesField;
 	public ProjectFrame frame = new ProjectFrame();
-	private ReaderClass reader = new ReaderClass(ProjectFrame.route);
-
-
+	private String route = "";
+	private ReaderClass reader;
 	/**
 	 * Launch the application.
 	 */
@@ -78,10 +75,10 @@ public class PortadaFrame extends JFrame {
 		seleccion.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				
-			ProjectFrame.route = FileChooserConfig.getRoute();
-			frame.setVisible(true);
 			
+			route= FileChooserConfig.getRoute();
+			frame.setVisible(true);
+			reader = new ReaderClass(route);
 			frame.setResultMatrix(reader.ReadArchive());
 			totalCasesField.setText(Integer.toString(UtilityClass.total));
 			}

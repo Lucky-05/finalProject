@@ -13,10 +13,10 @@ public class ReaderClass {
 	
 	public String[][] ReadArchive() {
 		File file = new File(route);
-		String result = ""; 
+		 
 		int counter = 0;
 		String[] temporal;
-		String text[][]= null;
+		String text[][]= new String[214463][40];
 		
 		
 
@@ -24,32 +24,33 @@ public class ReaderClass {
 			
 			String line; 
 			
-			while((line = buffered.readLine()) != null) {
+			while(counter<80000) {
+				
 				counter ++;
-			}
-			
-			 text= new String[counter][columns];
-			
-			for(int i = 0; i<counter; i++) {
+				
 				line = buffered.readLine();
-				 temporal = line.split(",");
-				for(int j = 0; j< temporal.length; j++) {
-					 text[i][j] = temporal[j];
+				temporal = line.split(",");
+				for(int i = 0; i< temporal.length; i++) {
+					text[counter][i]= temporal[i];
 					
 				}
+				 
 			}
+
+			UtilityClass.total = counter;
+			
+			return text;
 			
 			
-			buffered.close();
-			
-		}catch(IOException e){
-			e.printStackTrace();
 		}
 		
 		
-		UtilityClass.total = counter;
+		catch(IOException e){
+			e.printStackTrace();
+		}
 		
-		return text ;
+	
+		return null;
 		
 	}
 }

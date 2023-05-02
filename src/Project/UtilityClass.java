@@ -2,7 +2,7 @@ package Project;
 
 public class UtilityClass {
 	private int value;
-	private double percentage; 
+	 
 	private String[][] matrix;
 	public static int total; 
 	public UtilityClass() {
