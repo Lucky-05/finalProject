@@ -24,7 +24,7 @@ public class ReaderClass {
 			
 			String line; 
 			
-			while(counter<80000) {
+			while(counter<4000) {
 				
 				counter ++;
 				

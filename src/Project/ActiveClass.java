@@ -66,22 +66,27 @@ public ActiveClass() {
 		
 		
 	    for (int i = 0; i < matrix.length; i++) {
-	        if(matrix[i][20].equalsIgnoreCase(key)){
+	    	if(matrix[i][21] != null) {
+	    		
+	    	
+	        if(matrix[i][21].equalsIgnoreCase(key)){
 	        counter++;
 	        }
+	    	}
 	    }
-
+	    
 	    String[][] result = new String[counter][matrix[0].length];
 	 
 
 	    for (int i = 0; i < result.length; i++) {
 	       
-	    	System.out.println(matrix[i][20]);
-	        if(matrix[i][20].equalsIgnoreCase(key)){
+	    if(matrix[i][21] != null) {
+	        if(matrix[i][21].equalsIgnoreCase(key)){
 	            for (int j = 0; j < result[i].length; j++) {
 	              result[i][j] = matrix[i][j]; 
 	            }
 	            }
+	    }
 	    }
 
 
@@ -99,21 +104,25 @@ public ActiveClass() {
 		
 		
 	    for (int i = 0; i < matrix.length; i++) {
+	    	if(matrix[i][4] != null) {
 	        if(matrix[i][4].equalsIgnoreCase(key)){
+	        	System.out.println("Hola");
 	        counter++;
 	        }
+	    	}
 	    }
 
 	    String[][] result = new String[counter][matrix[0].length];
 	
 
 	    for (int i = 0; i < result.length; i++) {
-	       
+	       if(matrix[i][4] != null) {
 	        if(matrix[i][4].equalsIgnoreCase(key)){
 	            for (int j = 0; j < result[i].length; j++) {
 	              result[i][j] = matrix[i][j]; 
 	            }
 	            }
+	       }
 	    }
 
 	    UtilityClass utility = new UtilityClass(result, counter);
@@ -130,6 +139,8 @@ public ActiveClass() {
 		
 		
 	    for (int i = 0; i < matrix.length; i++) {
+	    	
+	    	if(matrix[i][7] !=  null) {
 	    	String temporal[] = matrix[i][7].split(" ");
 	    	
 	    	for(int j = 0; j< temporal.length; j++) {
@@ -137,7 +148,7 @@ public ActiveClass() {
 	    	        counter++;
 	    	        }
 	    	}
-	        
+	    	}   
 	    }
 
 	    String[][] result = new String[counter][matrix[0].length];
@@ -145,7 +156,7 @@ public ActiveClass() {
 
 	    for (int i = 0; i < result.length; i++) {
 	       
-	    	
+	    	if(matrix[i][7] != null) {
  	String temporal[] = matrix[i][7].split(" ");
 	    	
 	    	for(int j = 0; j< temporal.length; j++) {
@@ -156,7 +167,7 @@ public ActiveClass() {
 	    	        }
 	    	}
 	    	
-	    	
+	    	}
 	    }
 
 	    UtilityClass utility = new UtilityClass(result, counter);

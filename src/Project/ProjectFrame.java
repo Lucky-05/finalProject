@@ -12,6 +12,8 @@ import java.awt.event.MouseEvent;
 import java.awt.Font;
 import javax.swing.JLabel;
 import javax.swing.ImageIcon;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
 
 public class ProjectFrame extends JFrame {
 
@@ -23,7 +25,6 @@ public class ProjectFrame extends JFrame {
 	private static final long serialVersionUID = 1L;
 	
 	private JPanel contentPane;
-	private JTextField responseField;
 	static String route; 
 	private ReaderClass reader = new ReaderClass(route);
 	
@@ -34,6 +35,7 @@ public class ProjectFrame extends JFrame {
 	private JTextField percentageText;
 	private JTextField percentageField;
 	private JLabel image;
+	private JTextArea responseField;
 	
 
 	/**
@@ -60,19 +62,22 @@ public class ProjectFrame extends JFrame {
 		setBounds(100, 100, 703, 336);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-
+		
 		percentageField = new JTextField();
 		percentageField.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		percentageField.setColumns(10);
 		percentageField.setBounds(157, 269, 89, 20);
 		contentPane.add(percentageField);
 		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(10, 11, 455, 203);
+		contentPane.add(scrollPane);
+		
+		responseField = new JTextArea();
+		scrollPane.setViewportView(responseField);
+				
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		responseField = new JTextField();
-		responseField.setBounds(3, 3, 464, 234);
-		contentPane.add(responseField);
-		responseField.setColumns(10);
 		
 		JButton readButton = new JButton("Return to Home");
 		readButton.setFont(new Font("Tahoma", Font.PLAIN, 11));
@@ -99,20 +104,20 @@ public class ProjectFrame extends JFrame {
 		classButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				responseField.setText("");
+				
 				UtilityClass utility = new UtilityClass();
 				ActiveClass active = new ActiveClass();
 				utility= active.searchClass(filtroField.getText(),resultMatrix);
 				resultMatrix= utility.getMatrix();
-				System.out.println(resultMatrix[20][7]);
+				//System.out.println(resultMatrix[20][7]);
 				percentageField.setText(Double.toString(utility.getPercentage()));
-				//System.out.println(UtilityClass.traduceMatrix(utility.getMatrix()));
+				System.out.println(UtilityClass.traduceMatrix(utility.getMatrix()));
 				responseField.setText(UtilityClass.traduceMatrix(utility.getMatrix()));
 			}
 		});
 		classButton.setBounds(470, 152, 89, 23);
 		contentPane.add(classButton);
-		
+		responseField.setText("");
 		JButton edadButton = new JButton("Edad");
 		edadButton.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		edadButton.addMouseListener(new MouseAdapter() {
@@ -123,6 +128,7 @@ public class ProjectFrame extends JFrame {
 				ActiveClass active = new ActiveClass();
 				utility= active.searchEdad(Integer.parseInt(filtroField.getText()),resultMatrix);
 				resultMatrix= utility.getMatrix();
+				System.out.println(Integer.parseInt(filtroField.getText()));
 				percentageField.setText(Double.toString(utility.getPercentage()));
 				responseField.setText(UtilityClass.traduceMatrix(utility.getMatrix()));
 			}
@@ -189,8 +195,12 @@ public class ProjectFrame extends JFrame {
 		
 		image = new JLabel("");
 		image.setIcon(new ImageIcon("images\\image4.png"));
-		image.setBounds(470, 3, 219, 146);
+		image.setBounds(460, -5, 219, 146);
 		contentPane.add(image);
+		
+		
+		
+		
 		
 	
 	}
